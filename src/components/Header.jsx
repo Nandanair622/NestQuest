@@ -1,6 +1,6 @@
-import React from 'react'
 import myImage from "../images/header.jpg";
-import { useLocation,useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from "react-router-dom";
+
 export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -16,14 +16,14 @@ export default function Header() {
           <img
             src={myImage}
             alt="logo"
-            className="h-14 cursor-pointer"
+            className="h-12 cursor-pointer"
             onClick={() => navigate("/")}
           />
         </div>
         <div>
           <ul className="flex space-x-10">
             <li
-              className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${
+              className={`cursor-pointer py-3 text-sm font-semibold text-black border-b-[3px]  ${
                 pathMatchRoute("/") && "text-black border-b-red-500"
               }`}
               onClick={() => navigate("/")}
@@ -31,7 +31,7 @@ export default function Header() {
               Home
             </li>
             <li
-              className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${
+              className={`cursor-pointer py-3 text-sm font-semibold  text-black border-b-[3px]  ${
                 pathMatchRoute("/Offers") && "text-black border-b-red-500"
               }`}
               onClick={() => navigate("/Offers")}
@@ -39,12 +39,12 @@ export default function Header() {
               Offers
             </li>
             <li
-              className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${
+              className={`cursor-pointer py-3 text-sm font-semibold  text-black border-b-[3px]  ${
                 pathMatchRoute("/Signin") && "text-black border-b-red-500"
               }`}
               onClick={() => navigate("/Signin")}
             >
-              Sign in
+              Signin
             </li>
           </ul>
         </div>

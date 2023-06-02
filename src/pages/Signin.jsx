@@ -1,16 +1,16 @@
-import React from 'react'
-import { useState } from 'react';
+import React from "react";
+import { useState } from "react";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import GAuth from '../components/GAuth';
-import { signInWithEmailAndPassword,auth, getAuth } from 'firebase/auth';
+import GAuth from "../components/GAuth";
+import { signInWithEmailAndPassword, auth, getAuth } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 export default function Signin() {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const { email, password } = formData;
-    const navigate = useNavigate();
-   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
   function onChange(e) {
     setFormData((prevState) => ({
       ...prevState,
@@ -18,18 +18,20 @@ export default function Signin() {
     }));
   }
   async function onSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     try {
       const auth = getAuth();
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       if (userCredential.user) {
-       toast.success("Sign In was successful");
-       navigate("/"); 
+        toast.success("Sign In was successful");
+        navigate("/");
       }
-      
     } catch (error) {
       toast.error("Wrong user credentials");
-      
     }
   }
   return (

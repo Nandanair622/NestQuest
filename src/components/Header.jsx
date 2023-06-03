@@ -53,7 +53,7 @@ export default function Header() {
             </li>
             <li
               className={`cursor-pointer py-3 text-sm font-semibold  text-black border-b-[3px]  ${
-                pathMatchRoute("/Signin") ||
+                (pathMatchRoute("/Signin") && "text-black border-b-red-500") ||
                 (pathMatchRoute("/Profile") && "text-black border-b-red-500")
               }`}
               onClick={() => navigate("/Profile")}

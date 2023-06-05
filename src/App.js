@@ -25,8 +25,9 @@ function App() {
           <Route path="/Signin" element={<Signin />}></Route>
           <Route path="/SignUp" element={<SignUp />}></Route>
           <Route path="/Offers" element={<Offers />}></Route>
-          <Route path="/CreateList" element={<CreateList/>}></Route>
-
+          <Route path="/CreateList" element={<PrivateRoute />}>
+            <Route path="/CreateList" element={<CreateList />}></Route>
+          </Route>
           <Route path="/Forgotpsswd" element={<Forgotpsswd />}></Route>
         </Routes>
       </Router>

@@ -10,7 +10,7 @@ import CreateList from "./pages/CreateList";
 import Forgotpsswd from "./pages/Forgotpsswd";
 import Header from "./components/Header";
 import PrivateRoute from "./components/PrivateRoute";
-
+import EditListing from "./pages/EditListing";
 function App() {
   return (
     <>
@@ -27,6 +27,9 @@ function App() {
           <Route path="/Offers" element={<Offers />}></Route>
           <Route path="/CreateList" element={<PrivateRoute />}>
             <Route path="/CreateList" element={<CreateList />}></Route>
+          </Route>
+          <Route path="/EditListing" element={<PrivateRoute />}>
+            <Route path="/EditListing/:listingId" element={<EditListing />}></Route>
           </Route>
           <Route path="/Forgotpsswd" element={<Forgotpsswd />}></Route>
         </Routes>

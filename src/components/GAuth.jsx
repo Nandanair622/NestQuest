@@ -20,7 +20,7 @@ export default function GAuth() {
       if (!docSnap.exists()) {
         await setDoc(docRef,{name:user.displayName,email:user.email,timestamp:serverTimestamp()})
       }
-      toast.success("Sign Up was successful");
+      toast.success("Sign In was successful");
       navigate("/");
     } catch (error) {
       toast.error("Could not authorize with Google")

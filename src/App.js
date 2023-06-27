@@ -8,6 +8,7 @@ import SignUp from "./pages/SignUp";
 import Offers from "./pages/Offers";
 import CreateList from "./pages/CreateList";
 import Forgotpsswd from "./pages/Forgotpsswd";
+import Category from "./pages/Category";
 import Header from "./components/Header";
 import PrivateRoute from "./components/PrivateRoute";
 import EditListing from "./pages/EditListing";
@@ -38,8 +39,9 @@ function App() {
           <Route path="/Forgotpsswd" element={<Forgotpsswd />}></Route>
           <Route
             path="/category/:categoryName/:listingId"
-            element={<DisplayListing/>}
+            element={<DisplayListing />}
           ></Route>
+          <Route path="/category/:categoryName" element={<Category />}></Route>
         </Routes>
       </Router>
       <ToastContainer

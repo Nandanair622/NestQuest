@@ -1,7 +1,7 @@
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
 import { MdLocationOn } from "react-icons/md";
-import { FaTrash } from "react-icons/fa";
+import { FaTrash, FaBed, FaBath,FaParking,FaChair } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 export default function PropListing({ listing, id, onEdit, onDelete }) {
   return (
@@ -18,7 +18,7 @@ export default function PropListing({ listing, id, onEdit, onDelete }) {
         >
           {listing.timestamp?.toDate()}
         </Moment>
-        <div className="w-full p-[10px]">
+        <div className="w-full p-[10px] text-center">
           <div className="flex items-center space-x-1">
             <MdLocationOn className="h-4 w-4 text-green-600" />
             <p className="font-semibold text-sm mb-[2px] text-gray-600 truncate">
@@ -39,17 +39,30 @@ export default function PropListing({ listing, id, onEdit, onDelete }) {
           </p>
           <div className="flex items-center mt-[10px] space-x-3">
             <div className="flex items-center space-x-1">
+              <FaBed />
               <p className="font-bold text-xs">
                 {listing.bedrooms > 1 ? `${listing.bedrooms} Beds` : "1 Bed"}
               </p>
             </div>
             <div className="flex items-center space-x-1">
+              <FaBath />
               <p className="font-bold text-xs">
                 {listing.bathrooms > 1
                   ? `${listing.bathrooms} Baths`
                   : "1 Bath"}
               </p>
             </div>
+            <div className="flex items-center space-x-1">
+              <li className="flex items-center whitespace-nowrap">
+                {listing.parking ? <FaParking /> : ""}
+              </li>
+            </div>
+
+            <li className="flex items-center whitespace-nowrap">
+              {listing.furnished ? (
+                <FaChair className="text-lg mr-1" />
+              ) : ""}
+            </li>
           </div>
         </div>
       </Link>

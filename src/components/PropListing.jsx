@@ -65,6 +65,7 @@ export default function PropListing({ listing, id, onEdit, onDelete }) {
             </li>
           </div>
         </div>
+        <br />
       </Link>
       {onDelete && (
         <FaTrash
